@@ -8,7 +8,6 @@ var routes = [
     path: "/auto-select",
     component: () =>
       import(/* webpackChunkName: "auto-select" */ "@/views/auto-select.vue"),
-    name: "auto-select自适应",
   },
   {
     path: "/avue",
@@ -142,7 +141,7 @@ var routes = [
   {
     path: "/drag",
     component: () => import(/* webpackChunkName: "drag" */ "@/views/drag.vue"),
-    name: "拖拽 ",
+    name: "拖拽",
   },
   {
     path: "/dynamiccss",
@@ -246,10 +245,15 @@ var routes = [
       import(/* webpackChunkName: "shake" */ "@/views/shake.vue"),
   },
   {
+    path: "/slice-upload",
+    component: () =>
+      import(/* webpackChunkName: "slice-upload" */ "@/views/slice-upload.vue"),
+    name: "分片上传 ",
+  },
+  {
     path: "/stash-demo",
     component: () =>
       import(/* webpackChunkName: "stash-demo" */ "@/views/stash-demo.vue"),
-    name: "页面暂存 ",
   },
   {
     path: "/statistic",
@@ -315,6 +319,14 @@ var routes = [
       ),
   },
   {
+    path: "/vue-countupjs",
+    component: () =>
+      import(
+        /* webpackChunkName: "vue-countupjs" */ "@/views/vue-countupjs.vue"
+      ),
+    name: "vue数字动画 ",
+  },
+  {
     path: "/vxe-table",
     component: () =>
       import(/* webpackChunkName: "vxe-table" */ "@/views/vxe-table.vue"),
@@ -323,13 +335,13 @@ var routes = [
     path: "/wang-editor",
     component: () =>
       import(/* webpackChunkName: "wang-editor" */ "@/views/wang-editor.vue"),
-    name: "wang-editor富文本编辑器 ",
+    name: "富文本编辑器 ",
   },
   {
-    path: "/slice-upload",
+    path: "/vue-overflow",
     component: () =>
-      import(/* webpackChunkName: "slice-upload" */ "@/views/slice-upload.vue"),
-    name: "vue切片上传 ",
+      import(/* webpackChunkName: "vue-overflow" */ "@/views/vue-overflow.vue"),
+    name: "vue超出隐藏 ",
   },
 ];
 
