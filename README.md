@@ -1,5 +1,5 @@
 # 抖音视频案例
 
-抖音号：程序员小山与bug
+# 部署方法 https://blog.csdn.net/weixin_40634691/article/details/125684062
 
-https://sunzsh.github.io/vue-demos/#/
+https://1icheng.github.io/#/

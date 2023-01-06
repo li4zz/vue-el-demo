@@ -25,7 +25,7 @@
     </el-drawer>
     <el-container class="ctner">
       <el-header class="header" height="">
-        程序员小山与Bug
+        demo
         <!-- <svg><use xlink:href="#icon-test" /></svg> -->
         <el-badge class="item msg" @click.native="drawer = true">
           <i class="el-icon-menu"></i>
