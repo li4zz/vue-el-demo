@@ -1,3 +1,4 @@
+<!-- 富文本编辑器 -->
 <template>
   <div style="border: 1px solid #ccc; width: 900px; margin: 0 auto">
     <Toolbar
@@ -120,14 +121,11 @@ table {
 }
 table td,
 table th {
-  border: 1px solid #ccc;
   padding: 3px 5px;
   min-width: 50px;
   height: 20px;
 }
 table th {
-  border-right: 1px solid #ccc;
-  border-bottom: 2px solid #ccc;
   text-align: center;
   background-color: #f1f1f1;
 }

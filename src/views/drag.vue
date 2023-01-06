@@ -1,16 +1,18 @@
+<!-- 拖拽 -->
 <template>
   <div>
-
     <div class="some-panel">
-      <div v-drag drag-min-top="50" style="height: 20px; background-color: blue"></div>
+      <div
+        v-drag
+        drag-min-top="50"
+        style="height: 20px; background-color: blue"
+      ></div>
     </div>
-    
   </div>
 </template>
 
 <script>
-export default {
-}
+export default {};
 </script>
 
 <style scoped>

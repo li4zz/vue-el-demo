@@ -1,3 +1,4 @@
+<!-- 分片上传 -->
 <template>
   <el-upload
     :data="{ isType: 1, need: 2 }"

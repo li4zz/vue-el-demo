@@ -1,3 +1,4 @@
+<!-- 锚点 -->
 <template>
   <div id="app">
     <button @click="returnToA">跳转到A</button>

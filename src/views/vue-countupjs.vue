@@ -1,3 +1,4 @@
+<!-- vue 数字动画 -->
 <template>
   <div class="wrapper">
     <VueCountUp :start-value="0" :end-value="10000" />
