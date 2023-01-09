@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["drag"],{"6f5c":function(t,c,a){},c827:function(t,c,a){"use strict";a("6f5c")},f1c5:function(t,c,a){"use strict";a.r(c);var e=function(){var t=this,c=t._self._c;return c("div",[c("div",{staticClass:"some-panel"},[c("div",{directives:[{name:"drag",rawName:"v-drag"}],staticStyle:{height:"20px","background-color":"blue"},attrs:{"drag-min-top":"50"}})])])},n=[],i={},r=i,s=(a("c827"),a("2877")),o=Object(s["a"])(r,e,n,!1,null,"f6ec14d2",null);c["default"]=o.exports}}]);
+//# sourceMappingURL=drag.3f9da092.js.map
