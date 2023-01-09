@@ -4,7 +4,7 @@ import Vue from 'vue'
 
 Vue.use(VueRouter)
 var routes = [
-  {path: '/auto-select', component: ()=> import(/* webpackChunkName: "auto-select" */ "@/views/auto-select.vue")  },
+  {path: '/auto-select', component: ()=> import(/* webpackChunkName: "auto-select" */ "@/views/auto-select.vue") ,name: "auto-select自适应宽度 " },
   {path: '/avue', component: ()=> import(/* webpackChunkName: "avue" */ "@/views/avue.vue")  },
   {path: '/avue2', component: ()=> import(/* webpackChunkName: "avue2" */ "@/views/avue2.vue")  },
   {path: '/blur_submit_demo', component: ()=> import(/* webpackChunkName: "blur_submit_demo" */ "@/views/blur_submit_demo.vue")  },
