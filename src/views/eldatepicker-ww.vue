@@ -1,6 +1,7 @@
+<!-- 图片预览 -->
 <template>
   <div>
-    <el-date-picker 
+    <el-date-picker
       v-model="value"
       type="week"
       value-format="yyyy-WW"
@@ -14,8 +15,8 @@
 export default {
   data() {
     return {
-      value: null
-    }
-  }
-}
+      value: null,
+    };
+  },
+};
 </script>

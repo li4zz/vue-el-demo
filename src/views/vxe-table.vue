@@ -1,3 +1,4 @@
+<!-- vxe-table -->
 <template>
   <div>
     <vxe-toolbar>

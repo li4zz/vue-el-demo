@@ -1,22 +1,21 @@
+<!-- 自定义日历 -->
 <template>
-    <div>
-        <CMCalendar v-model="value"></CMCalendar>
-    </div>
+  <div>
+    <CMCalendar v-model="value"></CMCalendar>
+  </div>
 </template>
 <script>
-import CMCalendar from '@/components/cm-calendar'
+import CMCalendar from "@/components/cm-calendar";
 
 export default {
   data() {
-      return {
-          value: undefined
-      }
+    return {
+      value: undefined,
+    };
   },
   components: {
-      CMCalendar
-  }
-}
+    CMCalendar,
+  },
+};
 </script>
-<style scoped>
-
-</style>
+<style scoped></style>
