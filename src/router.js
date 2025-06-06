@@ -14,13 +14,11 @@ var routes = [
     path: "/chat-demo",
     component: () =>
       import(/* webpackChunkName: "chat-demo" */ "@/views/chat-demo.vue"),
-    name: "自定义聊天 ",
   },
   {
     path: "/cleave",
     component: () =>
       import(/* webpackChunkName: "cleave" */ "@/views/cleave.vue"),
-    name: "信用卡-日期-手机号-序列号输入格式问题",
   },
   {
     path: "/cm-calendar-demo",
@@ -28,7 +26,6 @@ var routes = [
       import(
         /* webpackChunkName: "cm-calendar-demo" */ "@/views/cm-calendar-demo.vue"
       ),
-    name: "CMCalendar自定义时间表",
   },
   {
     path: "/collapse-demo2",
@@ -61,7 +58,6 @@ var routes = [
       import(
         /* webpackChunkName: "eldatepicker-ww" */ "@/views/eldatepicker-ww.vue"
       ),
-    name: "时间选择器-获取年份的周",
   },
   {
     path: "/eltable-processor",
@@ -75,7 +71,6 @@ var routes = [
     path: "/img-viewer",
     component: () =>
       import(/* webpackChunkName: "img-viewer" */ "@/views/img-viewer.vue"),
-    name: "图片预览",
   },
   {
     path: "/",
@@ -92,7 +87,6 @@ var routes = [
     path: "/statistic",
     component: () =>
       import(/* webpackChunkName: "statistic" */ "@/views/statistic.vue"),
-    name: "el-statistic实现倒计时",
   },
   {
     path: "/svg-icon",
@@ -114,7 +108,6 @@ var routes = [
       import(
         /* webpackChunkName: "v-table-scroll" */ "@/views/v-table-scroll.vue"
       ),
-    name: "v-table-scroll横向纵向滚动",
   },
   {
     path: "/vue-countupjs",
@@ -151,20 +144,22 @@ var routes = [
   {
     path: "/vue-tableTree",
     component: () =>
-      import(/* webpackChunkName: "vue-scroll" */ "@/views/vue-tableTree.vue"),
-    name: "el表格结合树形结构展示 ",
+      import(
+        /* webpackChunkName: "vue-tableTree" */ "@/views/vue-tableTree.vue"
+      ),
+    name: "talbe+tree展示数据 ",
   },
   {
     path: "/vue-tree",
     component: () =>
       import(/* webpackChunkName: "vue-tree" */ "@/views/vue-tree.vue"),
-    name: "vue tree-展开收起效果 ",
+    name: "vue tree ",
   },
   {
     path: "/vxe-table",
     component: () =>
       import(/* webpackChunkName: "vxe-table" */ "@/views/vxe-table.vue"),
-    name: "vxe-table组件",
+    name: "vxe-table",
   },
   {
     path: "/wang-editor",
