@@ -1,7 +1,7 @@
 <!-- 锚点 -->
 <template>
   <div id="app">
-    <button @click="returnToA">跳转到A</button>
+    <button @click="returnToA">跳转到H</button>
     <div>a</div>
     <div>a</div>
     <div>a</div>
@@ -221,7 +221,7 @@
     <div>c</div>
     <div>c</div>
     <div>c</div>
-    <div id="header">cmmmmmmm</div>
+    <div id="header">H</div>
     <div>c</div>
     <div>c</div>
     <div>c</div>

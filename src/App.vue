@@ -85,6 +85,8 @@ $h_height: 46px;
 }
 .main {
   overflow: visible;
+  height: calc(100vh - 150px);
+  overflow-y: scroll;
   margin: #{$h_height} 0px 0px 0px;
   transition: margin-left 0.3s;
   -webkit-transition: margin-left 0.3s; /* Safari */
