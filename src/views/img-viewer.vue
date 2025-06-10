@@ -1,3 +1,4 @@
+<!-- 图片弹框预览 -->
 <template>
   <div>
     <img style="width: 300px" :src="imgUrl" @click="openImgViewer([imgUrl])" />

@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["svg-icon"],{"146c":function(c,s,t){"use strict";t.r(s);var n=function(){var c=this,s=c._self._c;return s("div",[s("div",{staticClass:"mytest"},[s("svg-icon",{attrs:{"icon-class":"loudou"}}),c._v(" 前端开发")],1)])},i=[],o={},u=o,a=(t("8c41"),t("2877")),e=Object(a["a"])(u,n,i,!1,null,"4bbca1e9",null);s["default"]=e.exports},"28b3":function(c,s,t){},"8c41":function(c,s,t){"use strict";t("28b3")}}]);
+//# sourceMappingURL=svg-icon.60a926e8.js.map

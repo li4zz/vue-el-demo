@@ -1,4 +1,4 @@
-<!-- 图片预览 -->
+<!-- 选择器根据日期获取周 -->
 <template>
   <div>
     <el-date-picker
