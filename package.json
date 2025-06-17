@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@smallwei/avue": "^2.8.23",
+    "@types/three": "^0.177.0",
     "@wangeditor/editor": "^5.1.23",
     "@wangeditor/editor-for-vue": "^1.0.2",
     "axios": "^0.21.1",
@@ -24,6 +25,7 @@
     "less-loader": "^4.1.0",
     "sass": "1.32.0",
     "sass-loader": "10.1.0",
+    "three": "^0.177.0",
     "vue": "2.7.10",
     "vue-countupjs": "^1.0.0",
     "vue-router": "^3.5.2",

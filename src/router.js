@@ -5,6 +5,7 @@ import Vue from 'vue'
 Vue.use(VueRouter)
 var routes = [
   {path: '/auto-select', component: ()=> import(/* webpackChunkName: "auto-select" */ "@/views/auto-select.vue") ,name: "auto-select自适应宽度 " },
+  {path: '/call-bind-apply', component: ()=> import(/* webpackChunkName: "call-bind-apply" */ "@/views/call-bind-apply.vue") ,name: "call/bind/apply " },
   {path: '/chat-demo', component: ()=> import(/* webpackChunkName: "chat-demo" */ "@/views/chat-demo.vue") ,name: "chat-demo " },
   {path: '/cleave', component: ()=> import(/* webpackChunkName: "cleave" */ "@/views/cleave.vue") ,name: "信用卡，日期，手机号，序列号输入格式验证 " },
   {path: '/cm-calendar-demo', component: ()=> import(/* webpackChunkName: "cm-calendar-demo" */ "@/views/cm-calendar-demo.vue") ,name: "自定义日历 " },
@@ -12,6 +13,7 @@ var routes = [
   {path: '/currency', component: ()=> import(/* webpackChunkName: "currency" */ "@/views/currency.vue") ,name: "货币类库 " },
   {path: '/drag', component: ()=> import(/* webpackChunkName: "drag" */ "@/views/drag.vue") ,name: "拖拽 " },
   {path: '/dynamiccss', component: ()=> import(/* webpackChunkName: "dynamiccss" */ "@/views/dynamiccss.vue") ,name: "动态css " },
+  {path: '/earth', component: ()=> import(/* webpackChunkName: "earth" */ "@/views/earth.vue") ,name: "earth " },
   {path: '/eldatepicker-ww', component: ()=> import(/* webpackChunkName: "eldatepicker-ww" */ "@/views/eldatepicker-ww.vue") ,name: "选择器根据日期获取周 " },
   {path: '/eltable-processor', component: ()=> import(/* webpackChunkName: "eltable-processor" */ "@/views/eltable-processor.vue") ,name: "表格进度条 " },
   {path: '/img-viewer', component: ()=> import(/* webpackChunkName: "img-viewer" */ "@/views/img-viewer.vue") ,name: "图片弹框预览 " },
