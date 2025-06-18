@@ -30,6 +30,7 @@ var routes = [
   {path: '/vue-scroll', component: ()=> import(/* webpackChunkName: "vue-scroll" */ "@/views/vue-scroll.vue") ,name: "导航定时滚动 " },
   {path: '/vue-tableTree', component: ()=> import(/* webpackChunkName: "vue-tableTree" */ "@/views/vue-tableTree.vue") ,name: "Eltable+Eltree实现数据展示 " },
   {path: '/vue-tree', component: ()=> import(/* webpackChunkName: "vue-tree" */ "@/views/vue-tree.vue") ,name: "vue tree " },
+  {path: '/vue1', component: ()=> import(/* webpackChunkName: "vue1" */ "@/views/vue1.vue") ,name: "vue篇1 " },
   {path: '/vxe-table', component: ()=> import(/* webpackChunkName: "vxe-table" */ "@/views/vxe-table.vue") ,name: "vxe-table " },
   {path: '/wang-editor', component: ()=> import(/* webpackChunkName: "wang-editor" */ "@/views/wang-editor.vue") ,name: "富文本编辑器 " },
 
