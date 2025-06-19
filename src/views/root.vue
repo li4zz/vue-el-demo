@@ -2,7 +2,7 @@
 <template>
   <div>
     <el-table
-      :data="$fullRouter.options.routes"
+      :data="tableData"
       :show-header="false"
       row-class-name="row-pointer"
       style="width: 100%"
@@ -16,6 +16,16 @@
 
 <script>
 export default {
+  data() {
+    return {
+      tableData: [],
+    };
+  },
+  mounted() {
+    this.tableData = this.$fullRouter.options.routes.filter(
+      (_) => _.path !== "/"
+    );
+  },
   methods: {
     jump(row) {
       this.$router.push(row.path);

@@ -1,7 +1,6 @@
 <!-- vue篇 -->
 <template>
   <div>
-    <img src="@/assets/images/2.gif" />
     <h3>一、Vue 3 的常用 API</h3>
     <p>
       ref：用于创建基本数据类型（如字符串、数字、布尔值等）的响应式引用。ref
@@ -248,8 +247,8 @@
     <p>.capture ：与事件冒泡的方向相反，事件捕获由外到内；</p>
     <p>.self ：只会触发自己范围内的事件，不包含子元素；</p>
     <p>.once ：只会触发一次。</p>
-    <img src="@/assets/images/1.gif" />
-    <h3>十七、</h3>
+    <img src="@/assets/images/2.gif" />
+    <!-- <h3>十七、</h3> -->
 
     <p></p>
     <p></p>

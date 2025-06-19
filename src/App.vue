@@ -18,18 +18,22 @@
         </el-table-column>
         <el-table-column prop="name" label="描述"> </el-table-column>
       </el-table>
-
       <!-- <div style="margin: 4px 0px;" v-for="router in $fullRouter.options.routes" :key="router.path">
          <router-link :to="router.path">{{router.name}}</router-link>
       </div> -->
     </el-drawer>
     <el-container class="ctner">
       <el-header class="header" height="">
-        demo
+        <i
+          v-if="$route.path !== '/'"
+          class="el-icon-arrow-left"
+          @click="$router.go(-1)"
+        ></i
+        >{{ $route.name }}
         <!-- <svg><use xlink:href="#icon-test" /></svg> -->
-        <el-badge class="item msg" @click.native="drawer = true">
+        <!-- <el-badge class="item msg" @click.native="drawer = true">
           <i class="el-icon-menu"></i>
-        </el-badge>
+        </el-badge> -->
       </el-header>
       <el-main class="main">
         <transition name="test" mode="out-in">

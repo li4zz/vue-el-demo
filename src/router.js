@@ -10,6 +10,7 @@ var routes = [
   {path: '/earth', component: ()=> import(/* webpackChunkName: "earth" */ "@/views/earth.vue") ,name: "earth " },
   {path: '/eldatepicker-ww', component: ()=> import(/* webpackChunkName: "eldatepicker-ww" */ "@/views/eldatepicker-ww.vue") ,name: "选择器根据日期获取周 " },
   {path: '/eltable-processor', component: ()=> import(/* webpackChunkName: "eltable-processor" */ "@/views/eltable-processor.vue") ,name: "表格进度条 " },
+  {path: '/jd-shopping-cart', component: ()=> import(/* webpackChunkName: "jd-shopping-cart" */ "@/views/jd-shopping-cart.vue") ,name: "仿京东购物车(贝塞尔曲线) " },
   {path: '/js', component: ()=> import(/* webpackChunkName: "js" */ "@/views/js.vue") ,name: "js篇 " },
   {path: '/mini-app', component: ()=> import(/* webpackChunkName: "mini-app" */ "@/views/mini-app.vue") ,name: "小程序篇 " },
   {path: '/', component: ()=> import(/* webpackChunkName: "root" */ "@/views/root.vue") ,name: "首页 " },
