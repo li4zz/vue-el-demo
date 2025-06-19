@@ -138,3 +138,13 @@ $h_height: 46px;
   cursor: pointer;
 }
 </style>
+<style>
+h3 {
+  overflow-wrap: break-word;
+}
+img {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+</style>
