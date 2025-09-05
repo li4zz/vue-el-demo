@@ -28,8 +28,8 @@
           v-if="$route.path !== '/'"
           class="el-icon-arrow-left"
           @click="$router.go(-1)"
-        ></i
-        >{{ $route.name }}
+        ></i>
+        <b id="newSize">Hello World</b>
         <!-- <svg><use xlink:href="#icon-test" /></svg> -->
         <!-- <el-badge class="item msg" @click.native="drawer = true">
           <i class="el-icon-menu"></i>
@@ -150,5 +150,46 @@ img {
   width: 100%;
   display: block;
   margin: 0 auto;
+}
+</style>
+<style>
+#newSize {
+  position: relative;
+  font-size: 40px;
+  /*增加字体间距*/
+  /*letter-spacing: 5px;*/
+  color: gray;
+}
+.el-icon-arrow-left {
+  font-size: 34px;
+  color: gray;
+}
+#newSize::after {
+  position: absolute;
+  top: 40;
+  left: 0;
+  border-radius: 20px;
+  content: "Hello World";
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(252, 70, 107, 1) 100%
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+  clip-path: circle(10% at 0% 50%);
+  animation: spotlight 4s infinite;
+}
+
+@keyframes spotlight {
+  0% {
+    clip-path: circle(10% at 0% 50%);
+  }
+  50% {
+    clip-path: circle(10% at 100% 50%);
+  }
+  100% {
+    clip-path: circle(10% at 0% 50%);
+  }
 }
 </style>
