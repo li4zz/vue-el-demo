@@ -45,10 +45,10 @@ export default {
 </script>
 <style lang="less" scoped>
 .container {
-  padding: 40px;
+  // padding: 40px;
 }
 .list {
-  width: 500px;
+  max-width: 360px;
   height: auto;
   border: 1px solid #ddd;
   border-radius: 5px;
