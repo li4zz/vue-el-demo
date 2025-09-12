@@ -37,6 +37,7 @@ fs.readdir(vueDir, function (err, files) {
   const result = `// 该文件由gen-router.js自动生成，请勿手动修改
 import VueRouter from 'vue-router'
 import Vue from 'vue'
+import Watermark from '@/utils/waterMark.js'
 
 Vue.use(VueRouter)
 var routes = [
@@ -46,6 +47,14 @@ ${routers}
 const router = new VueRouter({
   mode: 'hash',
   routes
+})
+  router.beforeEach((to, from, next) => {
+  next()
+})
+
+router.afterEach(() => {
+  Watermark.set('li4zz')
+  // Watermark.out() // 清除水印
 })
 export default router
 

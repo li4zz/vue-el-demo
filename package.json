@@ -6,7 +6,13 @@
     "serve": "node gen-router.js && vue-cli-service serve",
     "build": "node gen-router.js && vue-cli-service build",
     "genmenu": "node gen-router.js",
-    "svgo": "svgo -f src/assets/icons/svg --config=src/assets/icons/svgo.config.js"
+    "svgo": "svgo -f src/assets/icons/svg --config=src/assets/icons/svgo.config.js",
+    "build:analyze": "vue-cli-service build --mode production",
+    "analyze": "npm run build:analyze && webpack-bundle-analyzer dist/stats.json",
+    "analyze:server": "npm run build:analyze && webpack-bundle-analyzer --port 8888 dist/stats.json",
+    "analyze:static": "npm run build:analyze && webpack-bundle-analyzer dist/stats.json -m static -r report.html",
+    "analyze:json": "npm run build:analyze && webpack-bundle-analyzer --format json -m static -r report.json dist/stats.json",
+    "analyze:view": "npm run build:analyze && webpack-bundle-analyzer dist/static/js/*.js"
   },
   "dependencies": {
     "@smallwei/avue": "^2.8.23",
@@ -25,6 +31,7 @@
     "less-loader": "^4.1.0",
     "sass": "1.32.0",
     "sass-loader": "10.1.0",
+    "sortablejs": "^1.15.6",
     "three": "^0.177.0",
     "vue": "2.7.10",
     "vue-countupjs": "^1.0.0",
@@ -40,6 +47,10 @@
     "svg-sprite-loader": "^6.0.11",
     "svgo": "^3.0.0",
     "vue-template-compiler": "2.7.10",
-    "webpack": "^4.23.0"
+    "webpack": "^4.23.0",
+    "webpack-bundle-analyzer": "^4.10.2",
+    "babel-plugin-component": "^1.1.1",
+    "compression-webpack-plugin": "^6.1.1",
+    "terser-webpack-plugin": "^4.2.3"
   }
 }
