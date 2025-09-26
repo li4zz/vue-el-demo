@@ -15,6 +15,7 @@
     "analyze:view": "npm run build:analyze && webpack-bundle-analyzer dist/static/js/*.js"
   },
   "dependencies": {
+    "@scqilin/phone-ui-vue": "^0.2.0",
     "@smallwei/avue": "^2.8.23",
     "@types/three": "^0.177.0",
     "@wangeditor/editor": "^5.1.23",
@@ -26,11 +27,16 @@
     "currency.js": "^2.0.4",
     "dayjs": "^1.11.6",
     "element-ui": "^2.15.12",
+    "fabric": "^5.3.0",
+    "html2canvas": "^1.4.1",
+    "jquery": "^3.7.1",
     "js-cookie": "^3.0.1",
+    "jspdf": "^3.0.2",
     "less": "^3.9.0",
     "less-loader": "^4.1.0",
     "sass": "1.32.0",
     "sass-loader": "10.1.0",
+    "scss": "^0.2.4",
     "sortablejs": "^1.15.6",
     "three": "^0.177.0",
     "vue": "2.7.10",
@@ -44,13 +50,13 @@
     "@babel/plugin-proposal-optional-chaining": "^7.18.9",
     "@vue/cli-plugin-babel": "^4.5.15",
     "@vue/cli-service": "^4.5.0",
-    "svg-sprite-loader": "^6.0.11",
-    "svgo": "^3.0.0",
-    "vue-template-compiler": "2.7.10",
-    "webpack": "^4.23.0",
-    "webpack-bundle-analyzer": "^4.10.2",
     "babel-plugin-component": "^1.1.1",
     "compression-webpack-plugin": "^6.1.1",
-    "terser-webpack-plugin": "^4.2.3"
+    "svg-sprite-loader": "^6.0.11",
+    "svgo": "^3.0.0",
+    "terser-webpack-plugin": "^4.2.3",
+    "vue-template-compiler": "2.7.10",
+    "webpack": "^4.23.0",
+    "webpack-bundle-analyzer": "^4.10.2"
   }
 }

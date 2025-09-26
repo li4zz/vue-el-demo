@@ -1,6 +1,16 @@
-<!-- 导航定时滚动 -->
+<!-- 纯CSS实现公告滚动栏 -->
 <template>
-  <div id="demo">
+  <div>
+    <div class="sound">
+      <div class="box">
+        <p class="text" id="myParagraph">
+          你好，一个小小的赞和留言也是博主最大的动力<a
+            href="https://www.baidu.com"
+            >了解详情</a
+          >
+        </p>
+      </div>
+    </div>
     <ul class="list">
       <li
         v-for="(item, index) in ulList"
@@ -12,12 +22,8 @@
     </ul>
   </div>
 </template>
-
 <script>
 export default {
-  mounted() {
-    setInterval(this.startPlay, 2000);
-  },
   data() {
     return {
       ulList: [
@@ -27,6 +33,10 @@ export default {
       ],
       play: false,
     };
+  },
+  components: {},
+  mounted() {
+    setInterval(this.startPlay, 1000);
   },
   methods: {
     startPlay() {
@@ -41,8 +51,60 @@ export default {
   },
 };
 </script>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  background-repeat: no-repeat;
+}
 
-<style lang="scss" scoped>
+.sound {
+  width: 100%;
+  height: 38px;
+  background-color: #e9e4f5;
+  color: #000;
+  border-radius: 20px;
+  margin: 20px auto;
+  display: flex;
+  gap: 10px;
+  overflow: hidden;
+  line-height: 37px;
+  align-items: center;
+}
+
+.sound .box {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.text {
+  animation: slideLeft 10s linear infinite;
+  display: inline-block;
+  white-space: nowrap;
+  left: 100%;
+  top: 0;
+  position: absolute;
+  cursor: pointer;
+}
+
+.text:hover {
+  animation-play-state: paused;
+}
+
+@keyframes slideLeft {
+  0% {
+    left: 100%;
+  }
+
+  100% {
+    left: -100%;
+  }
+}
+
 .toUp {
   margin-top: -40px;
   transition: all 0.5s;
