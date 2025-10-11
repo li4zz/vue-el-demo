@@ -275,6 +275,14 @@
           </div>
         </div>
       </div>
+      <h3>22.laoding小特效</h3>
+      <div class="loader"></div>
+      <h3>23.打字机效果</h3>
+      <div class="typing">hello world</div>
+      <h3>24.立体阴影文字效果</h3>
+      <div class="div001">longshadow</div>
+      <h3>25.氖光效果（Neon）</h3>
+      <div class="div002">Neon</div>
     </section>
   </div>
 </template>
@@ -1575,5 +1583,160 @@ body {
     line-height: 15px;
     padding: 0 4px;
   }
+}
+</style>
+<style lang="scss">
+$colors: hsla(337, 84, 48, 0.75) hsla(160, 50, 48, 0.75) hsla(190, 61, 65, 0.75)
+  hsla(41, 82, 52, 0.75);
+$size: 2.5em;
+$thickness: 0.5em;
+// Calculated variables.
+$lat: ($size - $thickness) / 2;
+$offset: $lat - $thickness;
+
+.loader {
+  position: relative;
+  width: $size;
+  height: $size;
+  transform: rotate(165deg);
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: $thickness;
+    height: $thickness;
+    border-radius: $thickness / 2;
+    transform: translate(-50%, -50%);
+  }
+
+  &:before {
+    animation: before 2s infinite;
+  }
+
+  &:after {
+    animation: after 2s infinite;
+  }
+}
+
+@keyframes before {
+  0% {
+    width: $thickness;
+    box-shadow: $lat (-$offset) nth($colors, 1), (-$lat) $offset nth($colors, 3);
+  }
+  35% {
+    width: $size;
+    box-shadow: 0 (-$offset) nth($colors, 1), 0 $offset nth($colors, 3);
+  }
+  70% {
+    width: $thickness;
+    box-shadow: (-$lat) (-$offset) nth($colors, 1), $lat $offset nth($colors, 3);
+  }
+  100% {
+    box-shadow: $lat (-$offset) nth($colors, 1), (-$lat) $offset nth($colors, 3);
+  }
+}
+
+@keyframes after {
+  0% {
+    height: $thickness;
+    box-shadow: $offset $lat nth($colors, 2), (-$offset) (-$lat) nth($colors, 4);
+  }
+  35% {
+    height: $size;
+    box-shadow: $offset 0 nth($colors, 2), (-$offset) 0 nth($colors, 4);
+  }
+  70% {
+    height: $thickness;
+    box-shadow: $offset (-$lat) nth($colors, 2), (-$offset) $lat nth($colors, 4);
+  }
+  100% {
+    box-shadow: $offset $lat nth($colors, 2), (-$offset) (-$lat) nth($colors, 4);
+  }
+}
+
+/**
+ * Attempt to center the whole thing!
+ */
+
+html,
+body {
+  height: 100%;
+}
+
+// .loader {
+//   position: absolute;
+//   top: calc(50% - #{$size / 2});
+//   left: calc(50% - #{$size / 2});
+// }
+</style>
+<style>
+.typing {
+  color: #000;
+  font-size: 2em;
+  width: 21em;
+  height: 1.5em;
+  border-right: 1px solid transparent;
+  animation: typing 2s steps(42, end), blink-caret 0.75s step-end infinite;
+  font-family: Consolas, Monaco;
+  word-break: break-all;
+  overflow: hidden;
+}
+/* 打印效果 */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  ​to {
+    width: 21em;
+  }
+}
+​
+/* 光标 */
+@keyframes blink-caret {
+  ​ from,
+  to {
+    border-color: transparent;
+  }
+  ​50% {
+    border-color: currentColor;
+  }
+}
+</style>
+<style lang="scss">
+@function makeLongShadow($color) {
+  $val: 0px 0px $color;
+
+  @for $i from 1 through 50 {
+    $color: fade-out(desaturate($color, 1%), 0.02);
+    $val: #{$val}, #{$i}px #{$i}px #{$color};
+  }
+
+  @return $val;
+}
+
+.div001 {
+  font-size: 62px;
+  // text-shadow: makeLongShadow(hsl(14, 100%, 30%));
+  text-shadow: 0 -1px 0 #ffffff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c,
+    0 3px 0 #2a2a2a, 0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424,
+    0 7px 0 #222222, 0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c,
+    0 11px 0 #1a1a1a, 0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414,
+    0 15px 0 #121212;
+}
+
+.div002 {
+  // background: #000;
+  color: #fff;
+  text-shadow: 0 0 10px #0ebeff, 0 0 20px #0ebeff, 0 0 50px #0ebeff,
+    0 0 100px #0ebeff, 0 0 200px #0ebeff;
+  transition: 0.2s;
+}
+.div002:hover {
+  text-shadow: 0 0 10px #0ebeff, 0 0 20px #0ebeff, 0 0 50px #0ebeff,
+    0 0 100px #0ebeff, 0 0 200px #0ebeff;
 }
 </style>

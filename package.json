@@ -40,6 +40,7 @@
     "sortablejs": "^1.15.6",
     "three": "^0.177.0",
     "vue": "2.7.10",
+    "vue-count-to": "^1.0.13",
     "vue-countupjs": "^1.0.0",
     "vue-router": "^3.5.2",
     "vuex": "^3.6.2",

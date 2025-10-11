@@ -11,13 +11,20 @@
         >0</span
       >
     </div>
+    <CountTo
+      :startVal="startVal"
+      :endVal="endVal"
+      :duration="3000"
+      separator=""
+    ></CountTo>
   </div>
 </template>
 
 <script>
 import VueCountUp from "vue-countupjs";
+import CountTo from "vue-count-to";
 export default {
-  components: { VueCountUp },
+  components: { VueCountUp, CountTo },
   props: {
     time: {
       type: Number,
@@ -31,7 +38,10 @@ export default {
     },
   },
   data() {
-    return {};
+    return {
+      startVal: 0,
+      endVal: 30000,
+    };
   },
   watch: {},
   computed: {},

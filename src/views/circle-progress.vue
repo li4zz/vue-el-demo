@@ -84,13 +84,25 @@
         <p>圆环总长度为100%，两种数据之和最大为100%。</p>
         <p>使用上方的滑块调整两种数据的值。</p>
       </div>
+
+      <h1>单色圆环进度条</h1>
+      <div class="circle">
+        <div class="left" ref="circle_l"></div>
+        <div class="right" ref="circle_r"></div>
+        <div class="progress">
+          <span class="score">{{ total }}</span
+          >分
+        </div>
+      </div>
     </div>
   </div>
 </template>
 <script>
 export default {
   data() {
-    return {};
+    return {
+      total: 80,
+    };
   },
   components: {},
   mounted() {
@@ -291,5 +303,74 @@ input[type="range"]::-webkit-slider-thumb {
 .summary p {
   margin: 10px 0;
   color: #555;
+}
+</style>
+<style scoped>
+.circle {
+  margin: 100px auto;
+  position: relative;
+  width: 128px;
+  height: 128px;
+}
+
+.circle .progress {
+  position: absolute;
+  background-color: white;
+  border-radius: 50%;
+  text-align: center;
+  width: 112px;
+  height: 112px;
+  top: 8px;
+  left: 8px;
+  line-height: 112px;
+}
+.circle .score {
+  font-size: 46px;
+  color: #007fff;
+}
+
+.left,
+.right {
+  width: 64px;
+  height: 128px;
+  overflow: hidden;
+  position: relative;
+  float: left;
+  background-color: #c4cfe3;
+}
+
+.left {
+  border-radius: 128px 0 0 128px;
+}
+
+.right {
+  border-radius: 0 128px 128px 0;
+}
+.left:after,
+.right:after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 64px;
+  height: 128px;
+  border-radius: 128px 0 0 128px;
+  background-color: #007fff;
+}
+
+.right:after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-radius: 0 128px 128px 0;
+}
+.left:after {
+  transform-origin: right center;
+  transition: 0.4s;
+  transform: rotateZ(40deg);
+}
+
+.right:after {
+  transform-origin: left center;
+  transform: rotateZ(180deg);
 }
 </style>

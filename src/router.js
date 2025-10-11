@@ -19,6 +19,7 @@ var routes = [
   {path: '/emo', component: ()=> import(/* webpackChunkName: "emo" */ "@/views/emo.vue") ,name: "emo特效 " },
   {path: '/jd-shopping-cart', component: ()=> import(/* webpackChunkName: "jd-shopping-cart" */ "@/views/jd-shopping-cart.vue") ,name: "仿京东购物车(贝塞尔曲线) " },
   {path: '/', component: ()=> import(/* webpackChunkName: "root" */ "@/views/root.vue") ,name: "首页 " },
+  {path: '/scrollY', component: ()=> import(/* webpackChunkName: "scrollY" */ "@/views/scrollY.vue") ,name: "竖向滚动条与顶部滚动条 " },
   {path: '/slice-upload', component: ()=> import(/* webpackChunkName: "slice-upload" */ "@/views/slice-upload.vue") ,name: "分片上传 " },
   {path: '/slider‌-code', component: ()=> import(/* webpackChunkName: "slider‌-code" */ "@/views/slider‌-code.vue") ,name: "滑动拼图验证码 " },
   {path: '/statistic', component: ()=> import(/* webpackChunkName: "statistic" */ "@/views/statistic.vue") ,name: "el-statistic实现倒计时 " },
