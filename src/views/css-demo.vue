@@ -281,8 +281,22 @@
       <div class="typing">hello world</div>
       <h3>24.立体阴影文字效果</h3>
       <div class="div001">longshadow</div>
-      <h3>25.氖光效果（Neon）</h3>
-      <div class="div002">Neon</div>
+      <h3>25.google动画</h3>
+      <h4>
+        <span>G</span>
+        <span>o</span>
+        <span>o</span>
+        <span>g</span>
+        <span>l</span>
+        <span>e</span>
+      </h4>
+
+      <div class="google-loader">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </section>
   </div>
 </template>
@@ -1727,16 +1741,85 @@ body {
     0 11px 0 #1a1a1a, 0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414,
     0 15px 0 #121212;
 }
+</style>
+<style lang="scss" scoped>
+$font: "Montserrat", sans-serif;
 
-.div002 {
-  // background: #000;
-  color: #fff;
-  text-shadow: 0 0 10px #0ebeff, 0 0 20px #0ebeff, 0 0 50px #0ebeff,
-    0 0 100px #0ebeff, 0 0 200px #0ebeff;
-  transition: 0.2s;
+$blue: #4285f4;
+$red: #db4437;
+$yellow: #f4b400;
+$green: #0f9d58;
+$colors-list: $blue $red $yellow $green;
+
+.google-loader {
+  display: block;
+  text-align: center;
+  span {
+    display: inline-block;
+    margin-top: 10px;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    &:not(:first-child) {
+      margin-left: 10px;
+    }
+  }
+  @each $current-color in $colors-list {
+    $i: index($colors-list, $current-color);
+    $t: $i * -0.25;
+    span:nth-child(#{$i}) {
+      background: $current-color;
+      animation: move 1s ease-in-out (#{$t}s) infinite alternate;
+    }
+  }
 }
-.div002:hover {
-  text-shadow: 0 0 10px #0ebeff, 0 0 20px #0ebeff, 0 0 50px #0ebeff,
-    0 0 100px #0ebeff, 0 0 200px #0ebeff;
+
+@keyframes move {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(5px);
+  }
+}
+
+h4 {
+  font-family: $font;
+  font-size: 4em;
+  text-align: center;
+  letter-spacing: -8px;
+  margin-top: 0;
+  margin-bottom: 0;
+  span {
+    &:first-child {
+      color: $blue;
+    }
+    &:nth-child(2) {
+      color: $red;
+    }
+    &:nth-child(3) {
+      color: $yellow;
+    }
+    &:nth-child(4) {
+      color: $blue;
+    }
+    &:nth-child(5) {
+      color: $green;
+    }
+    &:last-child {
+      color: $red;
+      transform: rotate(-20deg);
+      display: inline-block;
+    }
+  }
+}
+
+html,
+body {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 </style>

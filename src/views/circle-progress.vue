@@ -85,7 +85,7 @@
         <p>使用上方的滑块调整两种数据的值。</p>
       </div>
 
-      <h1>单色圆环进度条</h1>
+      <h1>单色圆环进度条1</h1>
       <div class="circle">
         <div class="left" ref="circle_l"></div>
         <div class="right" ref="circle_r"></div>
@@ -94,6 +94,12 @@
           >分
         </div>
       </div>
+      <h1>单色圆环进度条2</h1>
+      <div
+        class="progress11"
+        style="--progress: 80%; --last: 20%"
+        data-progress="80%"
+      ></div>
     </div>
   </div>
 </template>
@@ -372,5 +378,26 @@ input[type="range"]::-webkit-slider-thumb {
 .right:after {
   transform-origin: left center;
   transform: rotateZ(180deg);
+}
+</style>
+<style scoped>
+.progress11 {
+  width: 200px;
+  height: 200px;
+  background: conic-gradient(green var(--progress), #f1f1f1 var(--last));
+  border-radius: 50%;
+  position: relative;
+  margin: 0 auto;
+  &::before {
+    content: attr(data-progress);
+    position: absolute;
+    inset: 10px;
+    background-color: #fff;
+    width: 180px;
+    height: 180px;
+    text-align: center;
+    line-height: 180px;
+    border-radius: 50%;
+  }
 }
 </style>
