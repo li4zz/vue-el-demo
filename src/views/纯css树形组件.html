@@ -1,0 +1,160 @@
+<style>
+    .treeview div.summary{
+            outline: 0;
+            padding-left: 30px;
+            background: repeating-linear-gradient( 90deg, #999 0 1px,transparent 0px 2px) 0px 50%/20px 1px no-repeat;
+    }
+    .treeview div.details>div.details:last-child{
+            background-size: 1px 23px;
+    }
+    .treeview>div.details:not(:last-child)>div.details:last-child{
+            background-size: 1px 100%;
+    }
+    .treeview div.details{
+            padding-left: 38px;
+            background: repeating-linear-gradient( #999 0 1px,transparent 0px 2px) 38px 0px/1px 100% no-repeat;
+    }
+    .treeview div.details>div.details{
+            display: none;
+            transition: .2s;
+    }
+    .treeview div.open>div.details{
+            display: block;
+            transition: .2s;
+    }
+    .treeview>div.details{
+            background: none;
+            padding-left: 0;
+    }
+    .treeview>div.details>div.summary{
+            background: none;
+            padding-left: 0;
+    }
+    .treeview>div.details>div.details{
+            padding-left: 8px;
+            background: repeating-linear-gradient( #999 0 1px,transparent 0px 2px) 8px 0px/1px 100% no-repeat;
+    }
+    .treeview div.summary{
+            display: flex;
+            align-items: center;
+            height: 46px;
+            font-size: 15px;
+            line-height: 22px;
+            color: rgba(0, 0, 0, 0.85);
+            cursor: default;
+    }
+    .treeview div.summary::after{
+            content: '';
+            position: absolute;
+            left: 10px;
+            right: 10px;
+            height: 38px;
+            background: #EEF2FF;
+            border-radius: 8px;
+            z-index: -1;
+            opacity: 0;
+            transition: .2s;
+    }
+    .treeview div.summary:hover::after{
+            opacity: 1;
+    }
+    .treeview div.summary:not(:only-child)::before{
+            content: '';
+            width: 14px;
+            height: 14px;
+            flex-shrink: 0;
+            margin-right: 8px;
+            border: 1px solid #999;
+            background: linear-gradient(#999, #999) 50%/1px 10px no-repeat,linear-gradient(#999, #999)  50%/10px 1px no-repeat;
+    }
+    .treeview div.open>div.summary::before{
+            background: linear-gradient(#999, #999) 50%/10px 1px no-repeat;
+    }
+</style>
+<div class="treeview" id="treeview">
+        <div class="details">
+                <div class="summary tree-item">项目1</div>
+                <div class="details">
+                        <div class="summary tree-item">文件夹</div>
+                        <div class="details">
+                                <div class="summary tree-item">sdd</div>
+                        </div>
+                </div>
+                <div class="details">
+                        <div class="summary tree-item">chrome test</div>
+                </div>
+        </div>
+
+        <div class="details">
+                <div class="summary tree-item">项目2</div>
+                <div class="details">
+                        <div class="summary tree-item">文件夹2-1</div>
+                        <div class="details">
+                                <div class="summary tree-item">文件夹2-1-1</div>
+                                <div class="details">
+                                        <div class="summary tree-item">文件夹2-1-1-1</div>
+                                        <div class="details">
+                                                <div class="summary tree-item">文件夹2-1-1-1-1</div>
+                                                <div class="details">
+                                                        <div class="summary tree-item">文件夹2-1-1-1-1-1</div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </div>
+        </div>
+
+        <div class="details">
+                <div class="summary tree-item">文件夹1</div>
+                <div class="details">
+                        <div class="summary tree-item">文件夹</div>
+                </div>
+                <div class="details">
+                        <div class="summary tree-item">文件夹2</div>
+                </div>
+        </div>
+
+        <div class="details">
+                <div class="summary tree-item">项目3</div>
+                <div class="details">
+                        <div class="summary tree-item">文件夹1</div>
+                        <div class="details">
+                                <div class="summary tree-item">1</div>
+                                <div class="details">
+                                        <div class="summary tree-item">文件夹2</div>
+                                </div>
+                        </div>
+                </div>
+                <div class="details">
+                        <div class="summary tree-item">文件夹</div>
+                </div>
+                <div class="details">
+                        <div class="summary tree-item">文件夹</div>
+                </div>
+                <div class="details">
+                        <div class="summary tree-item">文件夹</div>
+                </div>
+                <div class="details">
+                        <div class="summary tree-item">文件夹的副本</div>
+                </div>
+                <div class="details">
+                        <div class="summary tree-item">点点点</div>
+                </div>
+                <div class="details">
+                        <div class="summary tree-item">hewei</div>
+                        <div class="details">
+                                <div class="summary tree-item">hewei02</div>
+                        </div>
+                </div>
+        </div>
+</div>
+<script>
+        document.addEventListener('DOMContentLoaded', function() {
+                document.querySelectorAll('#treeview div.summary').forEach(summary => {
+                        summary.addEventListener('click', (e)=>{
+                                if (e.currentTarget.nextElementSibling !== null)
+                                        e.currentTarget.parentElement.classList.toggle('open');
+                        });
+                });
+        });
+</script>
