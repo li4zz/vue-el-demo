@@ -1,0 +1,122 @@
+<html>
+
+<head>
+    <title>CSS圆环百分比DEMO</title>
+    <style type="text/css">
+    .m-c-wrapper {
+        width: 28px;
+        height: 28px;
+        margin: 0 0;
+        position: relative;
+    }
+
+    .m-c-inner {
+        width: 14px;
+        height: 28px;
+        position: absolute;
+        top: 0;
+        overflow: hidden;
+    }
+
+    .m-c-right {
+        right: 0;
+    }
+
+    .m-c-left {
+        left: 0;
+    }
+
+    .m-c-percent {
+        width: 20px;
+        height: 20px;
+        border: 4px solid transparent;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        -webkit-transform: rotate(45deg);
+    }
+
+    .m-c-rightcircle {
+        border: 4px solid #ccc;
+        right: 0;
+    }
+
+    .m-c-leftcircle {
+        border: 4px solid #ccc;
+        left: 0;
+    }
+
+    .percent {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 28px;
+        font-size: 12px;
+        line-height: 28px;
+        text-align: center;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="m-c-wrapper">
+        <div class="m-c-inner m-c-right">
+            <div class="m-c-percent m-c-rightcircle" id="m-right-circle"></div>
+        </div>
+        <div class="m-c-inner m-c-left">
+            <div class="m-c-percent m-c-leftcircle" id="m-left-circle"></div>
+        </div>
+        <span class="percent" int-percent='100'>100</span>
+    </div>
+</body>
+
+</html>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+var deg = { percent: 100, left: 225, leftBC: "#ccc", right: 225, rightBC: "#ccc" };
+var pint;
+$(function() {
+    loadPercent($(".percent").attr("int-percent"));
+    pint = setInterval("refreshPercent()", 100);
+});
+
+function refreshPercent() {
+    var percent = $(".percent").attr("int-percent");
+    if (percent > 0) {
+        percent--;
+    } else if (percent == 0) {
+        percent = 100;
+    }
+    $(".percent").attr("int-percent", percent);
+    $(".percent").html(percent + "");
+    if (percent == 8) {
+        window.clearInterval(pint);
+    }
+    deg.percent = percent;
+    loadPercent(percent);
+}
+
+loadPercent(100);
+
+function loadPercent(percent) {
+    var allDeg = countDegByPercent(percent);
+    if (allDeg >= 180) {
+        var tmpDeg = allDeg - 180;
+        deg.left = 45 + tmpDeg;
+        deg.right = 225
+        deg.leftBC = "green";
+        deg.rightBC = "green";
+    } else {
+        deg.right = 45 + allDeg;
+        deg.rightBC = "green";
+        deg.leftBC = "#ccc";
+    }
+    console.log(deg);
+    $("#m-right-circle").css({ "-webkit-transform": "rotate(" + deg.right + "deg)", "border-left": "4px solid " + deg.rightBC, "border-bottom": "4px solid " + deg.rightBC });
+    $("#m-left-circle").css({ "-webkit-transform": "rotate(" + deg.left + "deg)", "border-top": "4px solid " + deg.leftBC, "border-right": "4px solid " + deg.leftBC });
+}
+
+function countDegByPercent(percent) {
+    return percent * 3.6;
+}
+</script>
