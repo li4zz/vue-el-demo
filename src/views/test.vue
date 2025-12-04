@@ -1,9 +1,8 @@
 <!-- 测试 -->
 <template>
-  <div>test</div>
+  <div></div>
 </template>
 <script>
-import $ from "jquery";
 export default {
   data() {
     return {};
