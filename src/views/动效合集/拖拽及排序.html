@@ -1,0 +1,90 @@
+<ul class="list1" id="sortable1">
+  <li class="item" data-id="item-1">1</li>
+  <li class="item" data-id="item-2">2</li>
+  <li class="item" data-id="item-3">3</li>
+  <li class="item" data-id="item-4">4</li>
+</ul>
+<ul class="list2" id="sortable2">
+  <li class="item" data-id="item-1">1</li>
+  <li class="item" data-id="item-2">2</li>
+  <li class="item" data-id="item-3">3</li>
+  <li class="item" data-id="item-4">4</li>
+</ul>
+
+<style>
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  .list1 {
+    display: flex;
+    align-items: center;
+  }
+  .list1 .item {
+    padding: 8px 16px;
+    margin-right: 16px;
+    border: 1px solid #999;
+  }
+  .list2 {
+    width: 300px;
+  }
+  .list2 .item {
+    margin: 8px 0;
+    padding: 8px;
+    border: 1px solid #999;
+    color: #fff;
+  }
+</style>
+
+<script src="https://registry.npmmirror.com/sortablejs/1.15.6/files/Sortable.min.js"></script>
+<script>
+new Sortable(document.getElementById('sortable1'), {
+  group: {
+    name: 'test-group',
+    pull: 'clone',
+    put: false // 不允许拖拽进这个列表
+  },
+  animation: 150,
+  sort: false // 设为false，禁止sort
+});
+
+new Sortable(document.getElementById('sortable2'), {
+  group: 'test-group',
+  animation: 150
+});
+</script>
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+<ul class="list" id="sortable">
+  <li class="item" data-id="item-1">1</li>
+  <li class="item" data-id="item-2">2</li>
+  <li class="item" data-id="item-3">3</li>
+  <li class="item" data-id="item-4">4</li>
+</ul>
+
+<style>
+  .list {
+    list-style: none;
+    padding: 0;
+    width: 300px;
+  }
+  .item {
+    margin: 8px 0;
+    padding: 8px;
+    border: 1px solid #999;
+    color: #fff;
+  }
+</style>
+
+<script>
+// 初始化
+new Sortable(document.getElementById('sortable'), {
+  animation: 150,
+  // 结束拖拽
+  onEnd: function () {
+    const list = this.toArray()
+    console.log(this, JSON.stringify(list));
+  },
+})
+</script>
