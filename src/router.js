@@ -25,6 +25,7 @@ var routes = [
   {path: '/statistic', component: ()=> import(/* webpackChunkName: "statistic" */ "@/views/statistic.vue") ,name: "el-statistic实现倒计时 " },
   {path: '/table-cols-fixed', component: ()=> import(/* webpackChunkName: "table-cols-fixed" */ "@/views/table-cols-fixed.vue") ,name: "eltable展开配合固定列的展开内容滚动问题 " },
   {path: '/test', component: ()=> import(/* webpackChunkName: "test" */ "@/views/test.vue") ,name: "测试 " },
+  {path: '/test1', component: ()=> import(/* webpackChunkName: "test1" */ "@/views/test1.vue")  },
   {path: '/time-progress', component: ()=> import(/* webpackChunkName: "time-progress" */ "@/views/time-progress.vue") ,name: "时间轴组件 " },
   {path: '/verify', component: ()=> import(/* webpackChunkName: "verify" */ "@/views/verify.vue") ,name: "向右滑动验证 " },
   {path: '/vue-countupjs', component: ()=> import(/* webpackChunkName: "vue-countupjs" */ "@/views/vue-countupjs.vue") ,name: "vue 数字动画 " },
