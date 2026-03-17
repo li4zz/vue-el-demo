@@ -1,6 +1,6 @@
 <!-- 纯css雪花动画 -->
 <template>
-  <div>
+  <div class="snow-container">
     <div class="snow"></div>
     <div class="snow"></div>
     <div class="snow"></div>
@@ -214,7 +214,7 @@ export default {
 };
 </script>
 <style lang="scss">
-body {
+.snow-container {
   height: 100vh;
   //渐进色背景
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);

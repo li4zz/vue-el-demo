@@ -9,9 +9,20 @@
         </el-collapse-item>
       </el-collapse>
     </in-body>
+    <in-body>
+      <el-collapse value="1" class="colp">
+        <el-collapse-item title="货币转换1234.56" name="1">
+          <div>人民币格式：{{ priceObj.cnyPrice }}</div>
+          <div>美元格式：{{ priceObj.usdPrice }}</div>
+        </el-collapse-item>
+      </el-collapse>
+    </in-body>
 
     <in-body>
       <el-button class="top2" type="" @click="add"> + 0.1 </el-button>
+    </in-body>
+    <in-body>
+      <el-button class="top2" type="" @click="toPrice">开始转换</el-button>
     </in-body>
   </div>
 </template>
@@ -24,12 +35,31 @@ export default {
   data() {
     return {
       money: 12345.67,
+      priceObj: {
+        cnyPrice: 0,
+        usdPrice: 0,
+      },
     };
   },
+  mounted() {},
   methods: {
     add() {
       //   this.money += 0.1;
       this.money = currency(this.money).add(0.1);
+    },
+    toPrice() {
+      const price = 1234.56;
+      //人民币格式(自动加¥和千分位)
+      const cnyPrice = new Intl.NumberFormat("zh-CN", {
+        style: "currency",
+        currency: "CNY",
+      }).format(price);
+      const usdPrice = new Intl.NumberFormat("en-US", {
+        style: "currency",
+        currency: "USD",
+      }).format(price);
+      this.priceObj = { cnyPrice, usdPrice };
+      console.log(this.priceObj); // ¥1,234.56 $1,234.56
     },
   },
 };
@@ -37,10 +67,10 @@ export default {
 <style scoped>
 /* 折叠面板 */
 .colp {
-  position: fixed;
-  width: 300px;
-  top: 100px;
-  left: 240px;
+  /* position: fixed; */
+  margin: 0 20px;
+  /* top: 100px;
+  left: 240px; */
   border-radius: 8px;
   overflow: hidden;
 }
@@ -59,9 +89,11 @@ export default {
   border-bottom-color: #555c64;
 }
 .top2 {
-  position: fixed;
+  /* position: fixed;
   top: 240px;
-  left: 240px;
+  left: 240px; */
+  margin: 20px;
+  float: right;
 }
 
 /* 聊天窗口 */

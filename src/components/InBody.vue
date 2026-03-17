@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="fhg">
     <transition v-bind:name="transName" appear>
       <slot></slot>
     </transition>

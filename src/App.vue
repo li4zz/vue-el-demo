@@ -89,13 +89,16 @@ $h_height: 46px;
 }
 .main {
   overflow: visible;
-  // height: 100vh;
+  min-height: 100vh;
   overflow-y: scroll;
-  margin: #{$h_height} 0px 0px 0px;
+  // margin: #{$h_height} 0px 0px 0px;
   transition: margin-left 0.3s;
   -webkit-transition: margin-left 0.3s; /* Safari */
 }
-
+.el-card__body,
+.el-main {
+  padding: 46px 20px 100px 20px;
+}
 .msg {
   float: right;
   font-size: 23px;

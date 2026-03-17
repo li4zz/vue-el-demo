@@ -2,7 +2,7 @@
   <div class="test1">
     <div class="box">
       <div class="a">
-        <div class="b"><img src="@/assets/images/5.png" /></div>
+        <div class="b"><img src="@/assets/images/55.png" /></div>
       </div>
     </div>
   </div>
