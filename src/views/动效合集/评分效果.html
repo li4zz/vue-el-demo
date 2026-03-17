@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Star Rating</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      @property --star-value {
+        syntax: "<number>";
+        inherits: true;
+        initial-value: 0;
+      }
+
+      input[type="range"] {
+        width: 270px;
+        position: relative;
+        margin: 0;
+        appearance: none;
+        cursor: pointer;
+
+        --star-size: 40px;
+        height: var(--star-size);
+        aspect-ratio: 5 / 1;
+        overflow: hidden;
+
+        timeline-scope: --star-timeline;
+        animation: star linear both;
+        animation-timeline: --star-timeline;
+        animation-range: entry 100% exit 0%;
+      }
+
+      input[type="range"]::-webkit-slider-thumb {
+        opacity: 0;
+        view-timeline: --star-timeline inline;
+      }
+
+      @keyframes star {
+        0% {
+          --star-value: 5;
+        }
+
+        100% {
+          --star-value: 0;
+        }
+      }
+
+      input[type="range"]::after {
+        position: absolute;
+        inset: 0;
+        content: "⭐⭐⭐⭐⭐";
+        font-size: var(--star-size);
+        line-height: var(--star-size);
+        --percent: calc(var(--star-value) * 20%);
+        background-image: linear-gradient(
+          to right,
+          #ffd600 0%,
+          #ffd600 var(--percent),
+          #ddd var(--percent),
+          #ddd 100%
+        );
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="range" min="0" max="5" value="1" step="0.5" />
+  </body>
+</html>
