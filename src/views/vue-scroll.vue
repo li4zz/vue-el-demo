@@ -163,24 +163,6 @@ li {
 }
 </style>
 <style>
-/* 基础样式 */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: "Inter", system-ui, sans-serif;
-  background-color: #f9fafb;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
-  color: #1f2937;
-}
-
 .container {
   width: 100%;
   max-width: 640px;
@@ -242,9 +224,9 @@ body {
 
 /* 示例网格布局 */
 .examples-grid {
-  display: grid;
+  /* display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 24px; */
 }
 
 @media (min-width: 768px) {
@@ -258,6 +240,7 @@ body {
   padding: 16px;
   border-radius: 8px;
   border: 1px solid #e5e7eb;
+  margin-bottom: 20px;
 }
 
 .example-title {

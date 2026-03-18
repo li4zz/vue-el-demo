@@ -27,7 +27,7 @@
         <i
           v-if="$route.path !== '/'"
           class="el-icon-arrow-left"
-          @click="$router.go(-1)"
+          @click="goBack"
         ></i>
         <b id="newSize">Hello World</b>
         <!-- <svg><use xlink:href="#icon-test" /></svg> -->
@@ -58,6 +58,13 @@ export default {
     jump(row) {
       this.$router.push(row.path);
       this.drawer = false;
+    },
+    goBack() {
+      this.$router.go(-1);
+      // window.scrollTo({
+      //   top: 500, // 目标位置
+      //   behavior: "smooth", // 平滑滚动效果
+      // });
     },
   },
 };
@@ -97,7 +104,7 @@ $h_height: 46px;
 }
 .el-card__body,
 .el-main {
-  padding: 46px 20px 100px 20px;
+  padding: 60px 20px 100px 20px;
 }
 .msg {
   float: right;
